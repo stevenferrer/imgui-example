@@ -1,0 +1,13 @@
+.DS_Store
+
+# build
+build/
+.cache/
+
+# meson wrap
+subprojects/packagecache
+subprojects/imgui-*
+subprojects/glfw-*
+
+# imgui
+imgui.ini

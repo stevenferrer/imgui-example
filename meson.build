@@ -6,20 +6,18 @@ project(
   default_options: ['warning_level=3', 'cpp_std=c++14'],
 )
 
-gl_dep = dependency('gl')
-glfw3_dep = dependency('glfw', fallback : ['glfw', 'glfw_dep'])
-imgui_dep = dependency('imgui', fallback : ['imgui', 'imgui_dep'])
-
+opengl_dep = dependency('gl')
+glfw3_dep = dependency('glfw3', version: '>=3.4', fallback: ['glfw3', 'glfw3_dep'])
+imgui_dep = dependency('imgui', version: '>=1.92', fallback: ['imgui', 'imgui_dep'])
 
 dependencies = [
-  gl_dep,
-  glfw3_dep,
-  imgui_dep,
+    opengl_dep,
+    glfw3_dep,
+    imgui_dep,
 ]
 
 executable(
   'example_glfw_opengl3',
   'example_glfw_opengl3.cpp',
   dependencies: dependencies,
-  
 )
